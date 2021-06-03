@@ -3,8 +3,8 @@ import com.google.gson.JsonObject;
 public interface MergeStrategy {
 
 
-    public String merge(JsonObject leftJsonObj, JsonObject rightJsonObj);
+    public String merge(MergeInput mergeInput);
 
-    MergeStrategy arrayAppendStart = (JsonObject leftJsonObj, JsonObject rightJsonObj) -> "array append start merge logic here";
-    MergeStrategy arrayAppendEnd = (JsonObject leftJsonObj, JsonObject rightJsonObj) -> "array append end merge logic here";
+    MergeStrategy arrayAppendStart = (MergeInput) -> "array append start merge logic here";
+    MergeStrategy arrayAppendEnd = (MergeInput) -> "array append end merge logic here";
 }

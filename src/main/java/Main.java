@@ -7,6 +7,6 @@ public class Main {
         JsonObject rightJsonObj = new JsonObject();
 
         Attribute attribute = new Attribute("array", null, "append_start");
-        attribute.mergeAttribute(leftJsonObj, rightJsonObj);
+        attribute.mergeAttribute(new MergeInput(leftJsonObj, rightJsonObj, attribute.getFormat()));
     }
 }
