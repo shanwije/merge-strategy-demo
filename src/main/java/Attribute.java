@@ -1,4 +1,4 @@
-import lombok.AllArgsConstructor;
+import com.google.gson.JsonObject;
 
 public class Attribute {
     private String type;
@@ -12,8 +12,8 @@ public class Attribute {
         this.strategy = MergeStrategyFactory.getStrategy(type, format, strategy);
     }
 
-    public void mergeAttribute() {
-        strategy.merge();
+    public String mergeAttribute(JsonObject leftJsonObj, JsonObject rightJsonObj) {
+        return strategy.merge(leftJsonObj, rightJsonObj);
     }
 }
 
