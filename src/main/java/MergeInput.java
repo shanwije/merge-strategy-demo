@@ -1,14 +1,14 @@
 import com.google.gson.JsonObject;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Value;
+import lombok.*;
 
-@Value
-@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
-@AllArgsConstructor
+@Data
 public class MergeInput {
     private JsonObject leftJsonObj;
     private JsonObject rightJsonObj;
     private String format;
+
+    public MergeInput(JsonObject leftJsonObj, JsonObject rightJsonObj) {
+        this.leftJsonObj = leftJsonObj;
+        this.rightJsonObj = rightJsonObj;
+    }
 }

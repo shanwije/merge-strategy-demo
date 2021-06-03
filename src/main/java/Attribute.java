@@ -15,6 +15,7 @@ public class Attribute {
     }
 
     public String mergeAttribute(MergeInput mergeInput) {
+        mergeInput.setFormat(format);
         return strategy.merge(mergeInput);
     }
 }

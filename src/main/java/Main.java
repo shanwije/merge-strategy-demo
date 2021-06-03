@@ -6,7 +6,9 @@ public class Main {
         JsonObject leftJsonObj = new JsonObject();
         JsonObject rightJsonObj = new JsonObject();
 
+        MergeInput mergeInput = new MergeInput(leftJsonObj, rightJsonObj);
+
         Attribute attribute = new Attribute("array", null, "append_start");
-        attribute.mergeAttribute(new MergeInput(leftJsonObj, rightJsonObj, attribute.getFormat()));
+        attribute.mergeAttribute(mergeInput);
     }
 }
